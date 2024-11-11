@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-// Model Data Class
+
 data class UserResponse(
     val data: List<User>,
     val page: Int,
@@ -32,7 +32,7 @@ data class User(
     val avatar: String
 )
 
-// API Interface
+
 interface ApiService {
     @GET("users")
     fun getUsers(
@@ -41,7 +41,7 @@ interface ApiService {
     ): Call<UserResponse>
 }
 
-// RecyclerView Adapter
+
 class UserAdapter(
     private val users: MutableList<User>,
     private val onItemClick: (User) -> Unit
@@ -75,7 +75,7 @@ class UserAdapter(
     }
 }
 
-// Main Activity
+
 class ThirdActivity : AppCompatActivity() {
     private lateinit var adapter: UserAdapter
     private lateinit var recyclerView: RecyclerView
@@ -98,9 +98,9 @@ class ThirdActivity : AppCompatActivity() {
         adapter = UserAdapter(mutableListOf()) { user ->
             val selectedUserName = "${user.first_name} ${user.last_name}"
 
-            // Kirim data ke SecondActivity
+
             val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("USER_NAME", selectedUserName) // Mengirimkan nama user yang dipilih
+            intent.putExtra("USER_NAME", selectedUserName)
             startActivity(intent)
         }
 
@@ -129,7 +129,7 @@ class ThirdActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                // Handle failure
+
             }
         })
     }

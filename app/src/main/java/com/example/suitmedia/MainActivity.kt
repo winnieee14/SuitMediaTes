@@ -18,13 +18,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Initialize views
+
         nameInput = findViewById(R.id.nameInput)
         palindromeInput = findViewById(R.id.palindromeInput)
         checkButton = findViewById(R.id.checkButton)
         nextButton = findViewById(R.id.nextButton)
 
-        // Set up "Check" button click listener
+
         checkButton.setOnClickListener {
             val inputText = palindromeInput.text.toString()
             if (inputText.isNotEmpty()) {
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Set up "Next" button click listener
+
         nextButton.setOnClickListener {
             val name = nameInput.text.toString()
             if (name.isNotEmpty()) {
@@ -51,13 +51,13 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    // Function to check if a string is a palindrome
+
     private fun isPalindrome(text: String): Boolean {
         val cleanedText = text.replace("\\s".toRegex(), "").lowercase()
         return cleanedText == cleanedText.reversed()
     }
 
-    // Function to show an alert dialog
+
     private fun showDialog(title: String, message: String) {
         val dialogBuilder = AlertDialog.Builder(this)
         dialogBuilder.setTitle(title)

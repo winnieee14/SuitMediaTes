@@ -13,26 +13,26 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
-        // Set Toolbar as the ActionBar
+
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // Show back button
 
-        // Ambil data dari intent
+
         val userName = intent.getStringExtra("USER_NAME") ?: "User"
 
-        // Temukan TextView dan Button
+
         val welcomeTextView = findViewById<TextView>(R.id.welcomeTextView)
         val userNameTextView = findViewById<TextView>(R.id.userNameTextView)
         val selectedUserTextView = findViewById<TextView>(R.id.selectedUserTextView)
         val chooseUserButton = findViewById<Button>(R.id.chooseUserButton)
 
-        // Set text untuk TextView
+
         welcomeTextView.text = "Welcome"
         userNameTextView.text = userName
-        selectedUserTextView.text = "Selected User $userName" // Update dengan nama user yang dipilih
+        selectedUserTextView.text = "Selected User $userName"
 
-        // Aksi ketika tombol "Choose a User" diklik
+
         chooseUserButton.setOnClickListener {
             val intent = Intent(this, ThirdActivity::class.java)
             startActivity(intent)
