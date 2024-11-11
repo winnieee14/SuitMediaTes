@@ -16,7 +16,7 @@ class SecondActivity : AppCompatActivity() {
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true) // Show back button
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
         val userName = intent.getStringExtra("USER_NAME") ?: "User"
