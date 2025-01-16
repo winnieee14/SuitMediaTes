@@ -2,90 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="left" />
+
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:textSize="18sp"
+        android:layout_gravity="left"
+        android:paddingBottom="20dp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:elevation="4dp"
-        app:title="Second Screen"
-        />
+        android:layout_marginTop="16dp" />
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center_horizontal">
-
-
-        <TextView
-            android:id="@+id/welcomeTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Welcome"
-            app:layout_constraintTop_toBottomOf="@id/userNameTextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="16sp"
-            android:textColor="@color/black" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            >
-
-        <TextView
-            android:id="@+id/userNameTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/selectedUserTextView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp" />
-
-            <TextView
-                android:id="@+id/selectedUserTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Selected User Name"
-                android:textSize="18sp"
-                android:textColor="#1D1D1D"
-                android:layout_marginTop="150dp"
-                android:layout_marginBottom="32dp"
-                android:textStyle="bold" />
-
-    </LinearLayout>
-
-
-        <Button
-            android:id="@+id/chooseUserButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Choose a User"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="@color/btn"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="12dp"
-            android:layout_marginTop="300dp"
-            android:elevation="4dp"
-            android:shadowRadius="12"/>
-    </LinearLayout>
 </LinearLayout>
